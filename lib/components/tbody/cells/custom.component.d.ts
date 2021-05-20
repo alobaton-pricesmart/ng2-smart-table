@@ -6,5 +6,6 @@ export declare class TbodyCustomComponent {
     row: Row;
     source: any;
     custom: EventEmitter<any>;
+    isDisabled(action: any): any;
     onCustom(action: any, event: any): void;
 }
