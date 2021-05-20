@@ -1926,7 +1926,7 @@ TbodyCustomComponent.decorators = [
       <a *ngFor="let action of grid.getSetting('actions.custom')" href="#"
          class="ng2-smart-action ng2-smart-action-custom-custom"
          [innerHTML]="action.title"
-         [attr.disabled]="action.disabledFunction(row.getData())"
+         [attr.disabled]="action.disabledFunction ? action.disabledFunction(row.getData()) : false"
          (click)="onCustom(action, $event)"></a>
         `
             },] }

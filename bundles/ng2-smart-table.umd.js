@@ -1290,7 +1290,7 @@
         { type: core.Component, args: [{
                     selector: 'ng2-st-tbody-custom',
                     changeDetection: core.ChangeDetectionStrategy.OnPush,
-                    template: "\n      <a *ngFor=\"let action of grid.getSetting('actions.custom')\" href=\"#\"\n         class=\"ng2-smart-action ng2-smart-action-custom-custom\"\n         [innerHTML]=\"action.title\"\n         [attr.disabled]=\"action.disabledFunction(row.getData())\"\n         (click)=\"onCustom(action, $event)\"></a>\n        "
+                    template: "\n      <a *ngFor=\"let action of grid.getSetting('actions.custom')\" href=\"#\"\n         class=\"ng2-smart-action ng2-smart-action-custom-custom\"\n         [innerHTML]=\"action.title\"\n         [attr.disabled]=\"action.disabledFunction ? action.disabledFunction(row.getData()) : false\"\n         (click)=\"onCustom(action, $event)\"></a>\n        "
                 },] }
     ];
     TbodyCustomComponent.propDecorators = {
